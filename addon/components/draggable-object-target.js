@@ -55,21 +55,11 @@ export default Component.extend(Droppable, {
     }
   },
 
-  handleMouseEnter(e) {
+  mouseEnter(e) {
     let mouseEnter = this.get('onMouseEnter');
     if (mouseEnter) {
       mouseEnter(e);
     }
-  },
-
-  didInsertElement() {
-      this._super(...arguments);
-      this.element.addEventListener('mouseenter', this.handleMouseEnter);
-  },
-
-  willDestroyElement() {
-      this._super(...arguments);
-      this.element.removeEventListener('mouseenter', this.handleMouseEnter);
   },
 
   actions: {
